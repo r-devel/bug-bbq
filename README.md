@@ -46,15 +46,15 @@ A reported bug may have been fixed in a more recent release of R or in the devel
 
 Once the bug is reproducible in the development version of R, the cause of the bug should be diagnosed. This means tracking down the line of code that produces the bug and understanding why it happens. At this stage, the objective is not to propose a fix, but to clarify what causes the reported behaviour.
 
-    - Explore the reprex interactively, either in the version of R in the bug report or in a development version of R, to diagnose the bug
-    - Decide which category the bug falls into:
-        - `not a bug`: the behaviour appears unexpected to the reporter because they misunderstand the purpose of the function or the function documentation. In other words, the behaviour is a feature not a bug.
-        - `wishlist`: the behaviour is as documented, but the reporter wishes for a different behaviour. In other words, the bug report is actually a feature request.
-        - `confirmed bug`: the behaviour is not as documented - there is something wrong with the code or it does not handle a particular case appropriately.
-    - Report your analysis on the relevant GitHub issue:
-        - State exactly where and why the bug happens. If the bug is in the underlying C/Fortran code and you do not know how to debug this, then state the line of R code making the relevant call.
-        - State the category of bug (not a bug/wishlist/confirmed bug)    
-        - Add `@r-devel/triagers` to notify the triage team of your report
+ - Explore the reprex interactively, either in the version of R in the bug report or in a development version of R, to diagnose the bug
+ - Decide which category the bug falls into:
+     - `not a bug`: the behaviour appears unexpected to the reporter because they misunderstand the purpose of the function or the function documentation. In other words, the behaviour is a feature not a bug.
+     - `wishlist`: the behaviour is as documented, but the reporter wishes for a different behaviour. In other words, the bug report is actually a feature request.
+     - `confirmed bug`: the behaviour is not as documented - there is something wrong with the code or it does not handle a particular case appropriately.
+ - Report your analysis on the relevant GitHub issue:
+     - State exactly where and why the bug happens. If the bug is in the underlying C/Fortran code and you do not know how to debug this, then state the line of R code making the relevant call.
+     - State the category of bug (not a bug/wishlist/confirmed bug)    
+     - Add `@r-devel/triagers` to notify the triage team of your report
 
 ### `discuss fix`
 
