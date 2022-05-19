@@ -115,7 +115,7 @@ There are binaries of R-devel built daily for Windows and MacOS:
 
 The Rocker project provides Docker images with customized R environments. You can use one of the configurations (a Docker file) to build a container, i.e. a virtual, self-contained environment on your computer, that runs the Debian distribution of Linux and has R-devel pre-installed. We recommend to build the Docker image rather than use the pre-built version from the Rocker project, as this lags a few days behind the latest R-devel.
 
-1. [Install Docker](docker pull rocker/r-devel) if you don't yet have it.
+1. [Install Docker](https://docs.docker.com/get-docker/) if you don't yet have it.
 2. Download the Dockerfile 
 
     ````curl https://raw.githubusercontent.com/rocker-org/rocker/master/r-devel/Dockerfile -O````
