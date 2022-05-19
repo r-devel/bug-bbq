@@ -58,7 +58,7 @@ Once the bug is reproducible in the development version of R, the cause of the b
 
 ### `discuss fix`
 
-Once the cause of the bug is known, there should be a discussion about how to fix it. This may require specialist expertise in programming or the methodology being implemented. If you feel equipped to comment, you can share your opinions about any proposed approach or propose your own approach. A member of R Core will need to approve a proposed approach before it should be implemented.
+Once the cause of the bug is known, there should be a discussion about how to fix it. This may require specialist expertise in programming or the methodology being implemented. If you feel equipped to comment, you can share your opinions about any proposed approach or propose your own approach. A [member of R Core](https://www.r-project.org/contributors.html) will need to approve a proposed approach before it should be implemented.
 
  - Add a comment to the GitHub issue corresponding to the bug.
  - Follow the repo to be notified of any responses and respond if you have further comment, or show your reaction by adding emoji.
