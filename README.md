@@ -7,7 +7,7 @@ This repository is designed to coordinate the activity of participants during th
 
 ## Types of contribution
 
-Open bugs will require different contributions depending on the quality of the original bug report and the action that has been taken by R Core developers or other contributors.
+Open bugs will require different contributions depending on the quality of the original bug report and the action that has already been taken by R Core developers or other contributors.
 The Bug BBQ organizers have added issues on this repo corresponding to bugs on R Bugzilla with labels representing the required actions, as below:
 
 
@@ -16,18 +16,18 @@ The Bug BBQ organizers have added issues on this repo corresponding to bugs on R
 | `needs reprex`     | Write a minimal reproducible example that demonstrates the bug  | R                      | R (version specified in bug report)           |
 | `check in r-devel` | Check that the bug still exists in the development version of R | R                      | R-devel version                             |
 | `needs diagnosis`  | Track down the cause of the bug, or identify as not a bug       | R, possibly C/Fortran | R version specified in bug report or later |
-| `discuss fix`      | Add comment(s) discussion on how to fix the bug                 | R/C/Fortran/statistics/technical writing/etc  |  N/A                 |
-| `needs patch`      | Implement the agreed fix and prepare a patch for review         | R, possibly C/Fortran | R source code                               |
+| `discuss fix`      | Add comment(s) to the discussion on how to fix the bug          | R/C/Fortran/statistics/technical writing/etc  |  N/A                 |
+| `needs patch`      | Implement the agreed fix and prepare a patch for review         | R, possibly C/Fortran | Source code for R                             |
 
-Other: `review patch`: test/review a proposed patch?
+[EDIT: add `review patch`: test/review a proposed patch?]
 
-More detail on the types of contribution is given in the sections below. For guidance on the required setup, see the next section
+More detail on the types of contribution is given in the sections below. The [Setup for contribution](#setup-for-contribution) section gives some guidance on getting the setup - note the required setup depends on the type of contribution you are making.
 
 ### `needs reprex`
 
 A minimal reproducible example (reprex) is needed when it is not clear from the report how to reproduce the bug, or the example given in the report is too complex to use for diagnosis (e.g. it uses a large data set, depends on too many packages, or has too many steps not related to the bug).
 
- - Install or get access to the version of R stated in the bug report if you cannot reproduce the bug in your current version.
+ - [Install or get access to the version of R stated in the bug report](#use-a-specific-version-of-R) if you cannot reproduce the bug in your current version.
  - Create a reprex using a standard data set, or simplify the existing example as much as possible, while still reproducing the bug.
  - Post your reprex as a comment on the corresponding GitHub issue, adding `@r-devel/triagers` to notify the triage team of the change.
 
@@ -35,7 +35,7 @@ A minimal reproducible example (reprex) is needed when it is not clear from the 
 
 A reported bug may have been fixed in a more recent release of R or in the development version ("R-devel"). So it is best to check if the bug is still an issue in R-devel before spending time on diagnosis or fixing.
 
- - Install or get access to the development version of R
+ - [Install or get access to the development version of R](#install-r-devel)
  - Run the reproducible example or follow the steps outlined in the bug report
  - On the corresponding GitHub issue:
      - Report if the bug is still an issue in R-devel 
@@ -46,12 +46,12 @@ A reported bug may have been fixed in a more recent release of R or in the devel
 
 Once the bug is reproducible in the development version of R, the cause of the bug should be diagnosed. This means tracking down the line of code that produces the bug and understanding why it happens. At this stage, the objective is not to propose a fix, but to clarify what causes the reported behaviour.
 
- - Explore the reprex interactively, either in the version of R in the bug report or in a development version of R, to diagnose the bug
+ - Explore the reprex interactively in a version of R where the bug can be reproduced ([the version of R stated in the bug report](#use-a-specific-version-of-R) or later), to diagnose the bug
  - Decide which category the bug falls into:
      - `not a bug`: the behaviour appears unexpected to the reporter because they misunderstand the purpose of the function or the function documentation. In other words, the behaviour is a feature not a bug.
      - `wishlist`: the behaviour is as documented, but the reporter wishes for a different behaviour. In other words, the bug report is actually a feature request.
      - `confirmed bug`: the behaviour is not as documented - there is something wrong with the code or it does not handle a particular case appropriately.
- - Report your analysis on the relevant GitHub issue:
+ - Report your analysis on the corresponding GitHub issue:
      - State exactly where and why the bug happens. If the bug is in the underlying C/Fortran code and you do not know how to debug this, then state the line of R code making the relevant call.
      - State the category of bug (not a bug/wishlist/confirmed bug)    
      - Add `@r-devel/triagers` to notify the triage team of your report
@@ -60,43 +60,45 @@ Once the bug is reproducible in the development version of R, the cause of the b
 
 Once the cause of the bug is known, there should be a discussion about how to fix it. This may require specialist expertise in programming or the methodology being implemented. If you feel equipped to comment, you can share your opinions about any proposed approach or propose your own approach. A member of R Core will need to approve a proposed approach before it should be implemented.
 
- - Add a comment to the relevant GitHub issue.
+ - Add a comment to the GitHub issue corresponding to the bug.
  - Follow the repo to be notified of any responses and respond if you have further comment, or show your reaction by adding emoji.
 
 ### `needs patch`
 
 Once there is agreement from a member of R Core on how to fix a bug, you can implement the fix.
 
- - Check out the latest version of the source code of R (see further comments below)
+ - Check out the latest version of the source code for R (see further comments below)
  - Make changes to the code to implement your fix
  - Prepare a patch, that is, a file showing the differences between your code and the checked out version of the R sources
  - Test your patch
- - Add a comment to the relevant GitHub issue with your patch
+ - Add a comment to the corresponding GitHub issue with your patch
  - Add `@r-devel/triagers` to notify the triage team
 
-You can check out the R sources from the R project Subversion repository or from the GitHub mirror. If you are new to contributing, we recommend using the GitHub mirror as it requires less set up. As you become more experienced, it is advisable to use the Subversion mirror and get set up to build R locally as it will be easier to test your changes locally. The method you use to test patches will depend on the way you have checked out the R sources
+You can check out the R sources from the [R project Subversion repository](https://svn.r-project.org/R/) or from the [GitHub mirror](https://github.com/r-devel/r-svn). If you are new to contributing, we recommend using the GitHub mirror as it requires less set up. As you become more experienced, it is advisable to use the Subversion mirror and get set up to build R locally as it will be easier to test your changes locally. The method you use to test patches will depend on the way you have checked out the R sources
  - [Instructions if you used Subversion to checkout the R sources](https://www.r-project.org/bugs.html#how-to-submit-patches)
  - Instructions if you used the GitHub mirror (TBD).
 
 ## Setup for contribution
 
-[We can ignore bugs that are MacOS/Windows-specific]
+[NOTE: We can ignore bugs that are MacOS/Windows-specific]
 
 ### Use a specific version of R
 
-Before accessing/installing the version of R specified in the bug report, you might check if your current version of R serves the purpose (allows you to reproduce the bug). Otherwise you can access/install old versions of R as detailed below
+Before accessing/installing the version of R specified in the bug report, you might check if your current version of R serves the purpose (allows you to reproduce the bug). Otherwise you can access/install old versions of R as detailed below.
 
 #### Access old versions of R
 
-https://rstudio.cloud/ workspaces provide a drop-down menu where you can select major versions of R up to 6 years back from the current release version.
+https://rstudio.cloud/ personal workspaces provide a drop-down menu where you can select major versions of R up to 6 years back from the current release version (you can use this for free for 25 hours/month).
 
 #### Install old versions of R
 
 The easiest is to install from a binary - follow the link for your OS below and find the binary for the required version.
 
-- Windows binary: https://cran.r-project.org/bin/windows/base/old/
-- MacOS binary: https://cran.r-project.org/bin/macosx/
+- Windows binaries: https://cran.r-project.org/bin/windows/base/old/
+- MacOS binaries: https://cran.r-project.org/bin/macosx/
 - Linux binaries: https://docs.rstudio.com/resources/install-r/
+
+[EDIT: need to add guidance on how to *use* a specific version when you have multiple installed]
 
 ### Use the latest version of R-devel
 
@@ -109,9 +111,20 @@ There are binaries of R-devel built daily for Windows and MacOS:
  - Windows binary: https://cran.r-project.org/bin/windows/base/rdevel.html
  - MacOS binary: https://mac.r-project.org/
 
-#### Use rocker
+#### Use Rocker
 
-TBA
+The Rocker project provides Docker images with customized R environments. You can use one of the configurations (a Docker file) to build a container, i.e. a virtual, self-contained environment on your computer, that runs the Debian distribution of Linux and has R-devel pre-installed. We recommend to build the Docker image rather than use the pre-built version from the Rocker project, as this lags a few days behind the latest R-devel.
+
+1. [Install Docker](docker pull rocker/r-devel) if you don't yet have it.
+2. Download the Dockerfile 
+
+    ````curl https://raw.githubusercontent.com/rocker-org/rocker/master/r-devel/Dockerfile -O````
+3. Build the Dockerfile
+
+    ````docker build -t r-devel-local .````
+4. Run R-devel to open the development version of R in the console (R-devel has the alias `RD` as it is installed alongside the release version of R)
+
+    ````RD````
 
 #### Install from source
 
