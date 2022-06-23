@@ -115,9 +115,7 @@ Before accessing/installing the version of R specified in the bug report, you mi
 
 #### Access old versions of R
 
-RStudio have kindly set up an [RStudio server](https://ide.training.rstudio.com) for the Bug BBQ, to make it easy to access old version of R up to 6 years back, as well as the current R-devel version. Log in using your GitHub account, click to start a new session, then click the session once it is ready. Select the desired R version in the drop-down menu in the top right. 
-
-Note that this server does not have git or svn installed, so can not be used to checkout the R sources.
+RStudio have kindly set up an instance of [RStudio Workbench](https://ide.training.rstudio.com) for the Bug BBQ, to make it easy to access old version of R up to 6 years back, as well as the current R-devel version. Log in using your GitHub account, click to start a new session, then click the session once it is ready. Select the desired R version in the drop-down menu in the top right. 
 
 Thanks to @edavidaja and @colearendt for their work setting this up!
 
