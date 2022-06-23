@@ -85,7 +85,7 @@ Instructions to get a copy of the source code, prepare and test a patch:
  
 TIP: If you want to modify an R function, search the source code for the relevant R script. E.g. the definition of `labels.lm()` is in `src/library/stats/R.lm.R`. You can modify this function and source it into R. However, for the function to be able to find functions in the package namespace, you will also need to set the environment of the function, e.g. `environment(labels.lm) <- asNamespace('stats')`. This way, you can interactively edit and test your modified function.
 
-## `review patch`
+### `review patch`
 
 Once a patch is proposed, it can be helpful for others to review the patch. This is particularly helpful for patches to the documentation, to check that the proposed change is more understandable to a general audience.
 
@@ -96,6 +96,16 @@ Once a patch is proposed, it can be helpful for others to review the patch. This
     * Do you have any feedback that could improve the patch?
     
 TIP: If it is a code patch, you may want to test it interactively rather than simply viewing the diff. Use the instructions from the last section to obtain a local copy of the R sources. Then apply the patch by running the command `patch -p0 < somefile.diff` in a terminal, where `somefile.diff` is the diff file for the patch, which you can add temporarily to the root of the checked out repository. The patch command is available on Linux/Mac OS and will be available in the RStudio terminal on Windows if you have [RTools](https://cran.r-project.org/bin/windows/Rtools/) installed. Ideally you would patch an installed version of R-devel, to ensure that code outside the patch is up-to-date.
+
+## Adding new issues
+
+You are welcome to review the open bugs on Bugzilla and add corresponding issues on the bug-bbq GitHub repo.
+
+The issue title should be "Bug <bug number on Bugzilla> - <bug summary on Bugzilla>" (this is the same form as the title of the bug report on Bugzilla).
+
+Ask a member of the [Triage team](https://github.com/orgs/r-devel/teams/triagers/members) to add labels for the Component given in the Bugzilla metadata and for the action required.
+
+If you want to help out by labelling bugs, ask to be added to the Triage team!
 
 ## Setup for contribution
 
