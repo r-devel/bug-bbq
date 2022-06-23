@@ -110,14 +110,6 @@ RStudio have kindly set up an RStudio server for the Bug BBQ, to make it easy to
 
 Thanks to @edavidaja and @colearendt for their work setting this up!
 
-#### Install old versions of R
-
-If you prefer to install a specific version of R, the easiest is to install from a binary.
-
-For Windows or MacOS, the **groundhog** package provides helpful documentation on installing different versions of R side-by-side (rather than overwriting the current version each time): https://groundhogr.com/many.
-
-For Linux, the RStudio docs provide similar documentation: https://docs.rstudio.com/resources/install-r/
-
 -->
 
 #### Access old versions of R
