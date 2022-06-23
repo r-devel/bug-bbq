@@ -113,18 +113,13 @@ If you want to help out by labelling bugs, ask to be added to the Triage team!
 
 Before accessing/installing the version of R specified in the bug report, you might check if your current version of R serves the purpose (allows you to reproduce the bug). Otherwise you can access/install old versions of R as detailed below.
 
-<!--
 #### Access old versions of R
 
-RStudio have kindly set up an RStudio server for the Bug BBQ, to make it easy to access old version of R up to 6 years back, as well as the current R-devel version. Log in using your GitHub account and select the desired R version in the drop-down menu
+RStudio have kindly set up an [RStudio server](https://ide.training.rstudio.com) for the Bug BBQ, to make it easy to access old version of R up to 6 years back, as well as the current R-devel version. Log in using your GitHub account, click to start a new session, then click the session once it is ready. Select the desired R version in the drop-down menu in the top right. 
+
+Note that this server does not have git or svn installed, so can not be used to checkout the R sources.
 
 Thanks to @edavidaja and @colearendt for their work setting this up!
-
--->
-
-#### Access old versions of R
-
-https://rstudio.cloud/ personal workspaces provide a drop-down menu where you can select major versions of R up to 6 years back from the current release version (you can use this for free for 25 hours/month).
 
 #### Install old versions of R
 
@@ -136,15 +131,11 @@ For Linux, the RStudio docs provide similar documentation: https://docs.rstudio.
 
 ### Use the development version, R-devel
 
-<!--
+If you are new to contributing and wish to install R-devel locally, we recommend to install from a binary or use Rocker, otherwise it can take a long time to ensure you have all the prerequisites installed to build R successfully.
 
 #### Access R-devel
 
 The easiest way to access the current version of R-Devel is to use the RStudio server as described in the section [Access old versions of R](#Access-old-versions-of-R)
-
--->
-
-To use the latest version of R-devel you will need to install it or build it from source. If you are new to contributing, we recommend to install from a binary or use Rocker, otherwise it can take a long time to ensure you have all the prerequisites installed to build R successfully.
 
 #### Install R-devel from a binary
 
